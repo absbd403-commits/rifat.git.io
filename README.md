@@ -1,1 +1,465 @@
-rifat.github.io
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Md Rifat Hossen </title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #0b1120;
+    --card: #151e30;
+    --text: #ffffff;
+    --muted: #aab4c5;
+    --accent: #38bdf8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+body.light {
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #526174;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--card);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+#theme {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+section {
+    padding: 85px 8%;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hero-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 110px;
+    box-shadow: 0 0 50px #38bdf855;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: var(--accent);
+    color: #07111f;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: var(--accent);
+}
+
+.about {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 40px;
+    line-height: 1.9;
+    color: var(--muted);
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill, .project, .contact-box {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill:hover, .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px #38bdf822;
+}
+
+.skill h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.project h3 {
+    margin: 15px 0;
+}
+
+.project p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.project-icon {
+    font-size: 45px;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #64748b;
+    border-radius: 7px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+footer {
+    text-align: center;
+    background: var(--card);
+    padding: 25px;
+    color: var(--muted);
+}
+
+@media(max-width: 768px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--card);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero-img {
+        width: 210px;
+        height: 210px;
+        font-size: 75px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RIFAT.</div>
+
+    <div style="display:flex;align-items:center">
+        <nav id="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button id="theme">☀️</button>
+        <span class="menu-btn" id="menu">☰</span>
+    </div>
+</header>
+
+<!-- Home -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p>Hello, I'm</p>
+        <h1>MD RIFAT<span>HOSSAIN(ROKI)</span></h1>
+        <h2>I'm a Web Developer</h2>
+        <p>
+            I create modern, responsive and beautiful
+            websites using HTML, CSS and JavaScript.
+            Welcome to my personal portfolio!
+        </p>
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="#projects" class="btn">My Work</a>
+    </div>
+
+    <div class="hero-img">👨‍💻</div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+
+    <div class="about">
+        <p>
+            Hello! I'm a passionate web developer who loves
+            building creative and user-friendly websites.
+            I enjoy learning new technologies and creating
+            digital experiences that make people's lives easier.
+            My goal is to become a professional full-stack developer.
+        </p>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <h2 class="section-title">My <span>Skills</span></h2>
+
+    <div class="skills-grid">
+        <div class="skill">
+            <h3>HTML5</h3>
+            <p>Website Structure</p>
+        </div>
+
+        <div class="skill">
+            <h3>CSS3</h3>
+            <p>Website Styling</p>
+        </div>
+
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <p>Interactive Websites</p>
+        </div>
+
+        <div class="skill">
+            <h3>Responsive Design</h3>
+            <p>Mobile Friendly Layouts</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="projects-grid">
+        <div class="project">
+            <div class="project-icon">🌐</div>
+            <h3>Business Website</h3>
+            <p>A professional business website with a modern design.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+
+        <div class="project">
+            <div class="project-icon">🛒</div>
+            <h3>E-Commerce Website</h3>
+            <p>An online shopping website with product sections.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+
+        <div class="project">
+            <div class="project-icon">📱</div>
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio website.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2 class="section-title">Contact <span>Me</span></h2>
+
+    <div class="contact-box">
+        <form id="contactForm">
+            <input type="text" id="name"
+                placeholder="Your Name" required>
+
+            <input type="email" id="email"
+                placeholder="Your Email" required>
+
+            <textarea id="message"
+                placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MyPortfolio. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Mobile navigation
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
+
+// Dark / Light mode
+const theme = document.getElementById("theme");
+
+theme.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    theme.textContent =
+        document.body.classList.contains("light")
+        ? "🌙" : "☀️";
+});
+
+// Contact form using email application
+document.getElementById("contactForm")
+.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent("Portfolio Contact");
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nMessage: " + message
+    );
+
+    window.location.href =
+        "mailto:your@email.com?subject=" +
+        subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
+S
