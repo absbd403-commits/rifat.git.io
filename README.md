@@ -1,1 +1,1 @@
-# rifat.git.io
+rifat.github.io
